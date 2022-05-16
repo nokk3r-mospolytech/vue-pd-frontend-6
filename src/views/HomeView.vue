@@ -1,18 +1,20 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HomeCard v-for="card in allCards" :key="card.id" v-bind:index="card.id"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import {mapGetters} from 'vuex'
+import HomeCard from "@/components/HomeCard";
 
 export default {
   name: 'HomeView',
+  computed: mapGetters(['allCards']),
   components: {
-    HelloWorld
+    HomeCard
   }
 }
 </script>
