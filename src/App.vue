@@ -1,40 +1,45 @@
 <template>
   <Header/>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view/>
+  <Footer/>
 </template>
 
 <script>
 
-import Header from "@/components/Header.vue";
+import Header from "@/components/Header.vue"
+import Footer from "@/components/Footer.vue"
 
 export default {
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 
 </script>
 
 
-
 <style lang="scss">
-body{
+body {
   display: flex;
   justify-content: center;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-div,a,h1,h2,h3,h4,h5{
+div {
+  display: flex;
+}
+
+div, a, h1, h2, h3, h4, h5, header, footer {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-a{
+a {
+  display: flex;
   text-decoration: none;
   color: black;
 }
@@ -44,8 +49,19 @@ a{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  flex-direction: column;
   width: 1720px;
   color: black;
+
+  > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1730px) {
+  #app {
+    width: 100%;
+  }
 }
 
 nav {

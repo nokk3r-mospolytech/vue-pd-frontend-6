@@ -1,12 +1,14 @@
 <template>
   <header>
+    <router-link to="/">
     <div class="logo">
       <img src="@/assets/img/logo.jpg" alt="">
-      <router-link to="/">NameBlog</router-link>
+      <span>NameBlog</span>
     </div>
-    <ul>
+    </router-link>
+    <ul class="link">
       <li><router-link to="/">Категории</router-link></li>
-      <li><router-link to="/">Блог</router-link></li>
+      <li><router-link to="'/about'">Блог</router-link></li>
       <li><router-link to="/">Профиль</router-link></li>
     </ul>
     <div class="login">
@@ -35,7 +37,7 @@ header {
     border-radius: 50%;
     margin-right: 16px;
   }
-  a{
+  span{
     font-size: 20px;
   }
 }
@@ -90,5 +92,17 @@ li{
   display: flex;
   list-style: none;
   margin: 0 25px;
+}
+
+@media (max-width: 1500px) {
+  .login{
+    input{
+      display: none;
+    }
+  }
+
+  .link{
+    display: none;
+  }
 }
 </style>
