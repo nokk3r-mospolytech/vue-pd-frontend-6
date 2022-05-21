@@ -1,20 +1,20 @@
 <template>
-  <a class="card_id" href="#">
+  <router-link class="card_id" :to="setURL(index)">
     <div :style="{'background-image': imageURL(index)}">
       <div class="ul">
         <span>Новости</span>
-        <span>{{ allCards[index].dateTime }}</span>
+        <span>{{ allHomeCards[index].dateTime }}</span>
       </div>
-      <h2>{{ allCards[index].title }}</h2>
+      <h2>{{ allHomeCards[index].title }}</h2>
     </div>
-  </a>
+  </router-link>
 </template>
 <script>
 import {mapGetters} from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters(['allCards']),
+    ...mapGetters(['allHomeCards']),
   },
   props: {
     index: Number
@@ -22,6 +22,9 @@ export default {
   methods: {
     imageURL(index) {
       return 'url(' + require('@/assets/img/Rectangle' + (index + 1) + '.jpg') + ')'
+    },
+    setURL(index){
+      return "/blog/" + index
     }
   }
 }
@@ -29,7 +32,7 @@ export default {
 <style scoped lang="scss">
   a{
     flex-direction: column;
-    justify-content: end;
+    justify-conten\t: end;
     height: 480px;
     border-radius: 35px;
     color: white;

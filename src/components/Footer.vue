@@ -1,12 +1,12 @@
 <template>
-  <footer>
-    <h3>Пример футера</h3>
-  </footer>
+   <footer>
+      <h3>Пример футера</h3>
+   </footer>
 </template>
 
 <style scoped lang="scss">
-  footer{
-    margin-top: 60px;
-    margin-bottom: 20px;
-  }
+footer {
+   margin-top: 60px;
+   margin-bottom: 20px;
+}
 </style>
