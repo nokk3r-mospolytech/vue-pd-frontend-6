@@ -115,6 +115,14 @@ export default {
 @media (max-width: 1200px) {
    .blog {
       width: 100%;
+
+      h2{
+         font-size: 32px;
+      }
+
+      >img{
+         height: 320px;
+      }
    }
 }
 
@@ -127,6 +135,14 @@ export default {
          .li {
             margin-top: 10px;
          }
+      }
+
+      h2{
+         font-size: 28px;
+      }
+
+      >img{
+         height: 220px;
       }
    }
 }

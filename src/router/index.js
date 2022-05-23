@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import BlogView from '@/views/BlogView.vue'
 import CategoriesViews from "@/views/CategoriesViews";
+import ProfileView from "@/views/ProfileView";
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path: '/categories',
         name: 'categories',
         component: CategoriesViews
+    },
+    {
+        path: '/profile',
+        name: 'profile',
+        component: ProfileView
     },
     {
         path: '/blog/:id',

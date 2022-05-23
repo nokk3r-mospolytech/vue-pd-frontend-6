@@ -14,15 +14,21 @@
             <router-link to="/">Блог</router-link>
          </div>
          <div class="li">
-            <router-link to="/">Профиль</router-link>
+            <router-link to="/profile">Профиль</router-link>
          </div>
       </div>
       <div class="login">
-<!--         <input type="text" placeholder="Найти...">-->
+         <!--         <input type="text" placeholder="Найти...">-->
          <router-link to="/login">Вход</router-link>
       </div>
    </header>
 </template>
+
+<script>
+
+export default {
+}
+</script>
 
 <style scoped lang="scss">
 header {
@@ -50,8 +56,8 @@ header {
    }
 }
 
-.link{
-   a{
+.link {
+   a {
       font-weight: 500;
    }
 }
@@ -87,7 +93,7 @@ header {
    //   filter: opacity(0);
    //}
 
-   a{
+   a {
       font-weight: 500;
    }
 
@@ -124,7 +130,7 @@ a {
 }
 
 @media (max-width: 1080px) {
-   .ul{
+   .ul {
       display: none;
    }
 }

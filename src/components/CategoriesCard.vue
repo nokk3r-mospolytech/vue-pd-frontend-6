@@ -1,6 +1,8 @@
 <template>
    <div class="card_id">
-      <img :src="require('@/assets/categoriesCard/Rectangle ' + (index) + '.png')" alt="photo">
+      <router-link to="/">
+         <img :src="require('@/assets/categoriesCard/Rectangle ' + (index) + '.png')" alt="photo">
+      </router-link>
       <h2>{{ allCategoriesCards[index - 1].title }}</h2>
       <div v-bind:class="[{ active: subscribed }]" class="btn">
          <span>{{ isSubscribed(subscribed) }}</span>
@@ -29,8 +31,8 @@ export default {
       subscribed: Boolean
    },
    methods: {
-      isSubscribed(bool){
-         if (bool){
+      isSubscribed(bool) {
+         if (bool) {
             return 'вы подписаны'
          }
          return 'подписаться'
@@ -43,15 +45,15 @@ export default {
    flex-direction: column;
    align-items: start;
 
-   >*{
+   > * {
       margin-top: 10px;
    }
 
-   span, a{
+   span, a {
       font-weight: 500;
    }
 
-   >img{
+   img {
       width: 250px;
       height: 250px;
       object-fit: cover;
@@ -59,29 +61,24 @@ export default {
       border-radius: 30px;
    }
 
-   .btn{
+   .btn {
       width: 100%;
-      border: 1px solid #000000;
-      border-radius: 5px;
-      justify-content: center;
-      padding: 5px 0;
-      cursor: pointer;
       background: #FFA5A5;
    }
-   
-   .active{
+
+   .active {
       background: none;
    }
 
-   .ul{
+   .ul {
       flex-direction: row;
 
-      span{
+      span {
          display: flex;
          align-items: center;
       }
 
-      >span:first-of-type::after{
+      > span:first-of-type::after {
          content: '';
          display: flex;
          width: 4px;

@@ -32,7 +32,7 @@ div {
    display: flex;
 }
 
-div, a, h1, h2, h3, h4, h5, header, footer {
+div, a, h1, h2, h3, h4, h5, header, footer, img {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -72,5 +72,13 @@ nav {
          color: #42b983;
       }
    }
+}
+
+.btn{
+   border: 1px solid #000000;
+   border-radius: 5px;
+   justify-content: center;
+   padding: 5px 0;
+   cursor: pointer;
 }
 </style>
