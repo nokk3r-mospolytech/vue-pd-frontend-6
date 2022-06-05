@@ -6,27 +6,34 @@
             <span>NameBlog</span>
          </div>
       </router-link>
-      <div class="ul link">
-         <div class="li">
-            <router-link to="/categories">Категории</router-link>
+      <div class="right_side">
+         <div class="ul ul_link">
+            <div class="li">
+               <router-link to="/categories">Категории</router-link>
+            </div>
+            <div class="li">
+               <router-link to="/">Блог</router-link>
+            </div>
+            <div class="li">
+               <router-link to="/profile">Профиль</router-link>
+            </div>
          </div>
-         <div class="li">
-            <router-link to="/">Блог</router-link>
+         <BurgerMenu/>
+         <div class="login">
+            <!--         <input type="text" placeholder="Найти...">-->
+            <router-link to="/login">Вход</router-link>
          </div>
-         <div class="li">
-            <router-link to="/profile">Профиль</router-link>
-         </div>
-      </div>
-      <div class="login">
-         <!--         <input type="text" placeholder="Найти...">-->
-         <router-link to="/login">Вход</router-link>
       </div>
    </header>
 </template>
 
 <script>
+import BurgerMenu from "@/components/Header/BurgerMenu";
 
 export default {
+   components: {
+      BurgerMenu
+   }
 }
 </script>
 
@@ -39,6 +46,10 @@ header {
    height: 80px;
    padding: 0 40px;
    width: 100%;
+}
+
+a {
+   font-size: 25px;
 }
 
 .logo {
@@ -56,10 +67,9 @@ header {
    }
 }
 
-.link {
-   a {
-      font-weight: 500;
-   }
+.right_side{
+   width: 80%;
+   justify-content: space-between;
 }
 
 .login {
@@ -73,47 +83,28 @@ header {
       border: 2px solid #DADADA;
    }
 
-   // И так сойдет
-
-   //&::before {
-   //   display: flex;
-   //   position: relative;
-   //   left: 170px;
-   //   content: "";
-   //   width: 34px;
-   //   height: 34px;
-   //   margin-left: -34px;
-   //   transform: scale(0.8);
-   //   background: url("@/assets/img/search.svg");
-   //   z-index: 1;
-   //   transition: 0.1s;
-   //}
-   //
-   //&:hover::before {
-   //   filter: opacity(0);
-   //}
-
    a {
       font-weight: 500;
    }
 
 }
 
-a {
-   font-size: 25px;
-}
-
-.ul {
+.ul_link {
    display: flex;
    flex-direction: row;
    justify-content: center;
-   margin-right: 100px;
-}
+   width: 100%;
+   margin-right: 150px;
 
-.li {
-   display: flex;
-   list-style: none;
-   margin: 0 50px;
+   a {
+      font-weight: 500;
+   }
+
+   >.li {
+      display: flex;
+      list-style: none;
+      margin: 0 50px;
+   }
 }
 
 @media (max-width: 1500px) {
@@ -130,8 +121,12 @@ a {
 }
 
 @media (max-width: 1080px) {
-   .ul {
+   .ul_link {
       display: none;
+   }
+
+   .right_side{
+      justify-content: end;
    }
 }
 </style>
