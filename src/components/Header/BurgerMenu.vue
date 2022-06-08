@@ -61,7 +61,7 @@ export default {
    }
 }
 
-a{
+a {
    font-weight: 500;
    font-size: 30px;
 }

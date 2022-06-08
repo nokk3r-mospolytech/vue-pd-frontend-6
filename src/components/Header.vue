@@ -67,7 +67,7 @@ a {
    }
 }
 
-.right_side{
+.right_side {
    width: 80%;
    justify-content: space-between;
 }
@@ -100,14 +100,14 @@ a {
       font-weight: 500;
    }
 
-   >.li {
+   > .li {
       display: flex;
       list-style: none;
       margin: 0 50px;
    }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
    .login {
 
       &::before {
@@ -125,7 +125,7 @@ a {
       display: none;
    }
 
-   .right_side{
+   .right_side {
       justify-content: end;
    }
 }

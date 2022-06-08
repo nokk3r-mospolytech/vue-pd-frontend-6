@@ -45,12 +45,12 @@ export default {
          padding: 5px 10px;
       }
 
-      .password{
+      .password {
          width: 100%;
          justify-content: space-between;
          align-items: center;
 
-         input{
+         input {
             width: 65%;
          }
       }

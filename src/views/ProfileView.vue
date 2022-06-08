@@ -147,12 +147,12 @@ export default {
 
 @media (max-width: 1200px) {
    .profile {
-      .ul_profile{
-         .profile_name{
+      .ul_profile {
+         .profile_name {
             flex-direction: column;
             justify-content: start;
 
-            .btn{
+            .btn {
                margin-top: 30px;
             }
          }
@@ -173,20 +173,20 @@ export default {
             }
          }
 
-         .profile_name{
+         .profile_name {
             flex-direction: column;
             justify-content: start;
 
 
-
-            .contact{
-               h3{
-                  font-size: 20px;
+            .contact {
+               h3 {
+                  font-size: 1.5em;
                   text-align: start;
                }
 
-               span{
-                  font-size: 12px;
+               span {
+                  margin-top: 10px;
+                  font-size: 1em;
                   text-align: start;
                }
             }

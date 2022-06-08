@@ -74,7 +74,7 @@ nav {
    }
 }
 
-.btn{
+.btn {
    border: 1px solid #000000;
    border-radius: 5px;
    justify-content: center;

@@ -102,16 +102,21 @@ export default {
 }
 
 @media (max-width: 1200px) {
-   .categories{
-      .ul{
+   .categories {
+      .ul {
          flex-wrap: wrap;
       }
    }
 }
 
 @media (max-width: 768px) {
-   .categories{
-      .ul{
+   .categories {
+      > h2 {
+         text-align: center;
+         font-size: 2.5em;
+      }
+
+      .ul {
          justify-content: center;
 
          .card_id:not(:first-of-type){
