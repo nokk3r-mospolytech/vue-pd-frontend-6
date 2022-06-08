@@ -125,13 +125,15 @@ a {
 }
 
 .active {
-
    .ul_link__menu {
       display: flex;
-      transition: 0.3s;
-      background: rgba(0, 0, 0, 0.6);
-
-
+      animation-name: fade_in;
+      animation-duration: 0.15s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
    }
 }
 

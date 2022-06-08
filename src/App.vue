@@ -59,6 +59,19 @@ a {
    justify-content: space-between;
 }
 
+@keyframes fade_in {
+   0% {
+      display: flex;
+      opacity: 0;
+      visibility: hidden;
+   }
+   100% {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
 @media (min-width: 1920px) {
    #app {
       width: 1700px;
