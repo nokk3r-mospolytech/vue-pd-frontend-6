@@ -3,6 +3,8 @@ import HomeView from '@/views/HomeView.vue'
 import BlogView from '@/views/BlogView.vue'
 import CategoriesViews from "@/views/CategoriesViews";
 import ProfileView from "@/views/ProfileView";
+import MarkdownView from "@/views/MarkdownView";
+
 
 const routes = [
     {
@@ -24,6 +26,11 @@ const routes = [
         path: '/categories',
         name: 'categories',
         component: CategoriesViews
+    },
+    {
+        path: '/markdown',
+        name: 'markdown',
+        component: MarkdownView
     },
     {
         path: '/profile',
