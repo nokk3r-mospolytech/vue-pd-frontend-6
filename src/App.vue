@@ -16,6 +16,12 @@ export default {
    }
 }
 
+window.addEventListener('resize', () => {
+   // We execute the same script as before
+   let vh = window.innerHeight * 0.01;
+   document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 </script>
 
 
@@ -53,6 +59,8 @@ a {
    align-items: center;
    width: 1720px;
    color: black;
+   min-height: calc(var(--vh, 1vh) * 100);
+   justify-content: space-between;
 }
 
 @media (max-width: 1730px) {
