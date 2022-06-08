@@ -5,11 +5,7 @@
          <div class="line line_2"></div>
          <div class="line line_3"></div>
       </div>
-      <div class="ul ul_link__menu">
-         <div class="icon" v-on:click="isActiveMenu=false">
-            <div class="line line_1"></div>
-            <div class="line line_2"></div>
-         </div>
+      <div class="ul ul_link__menu" v-on:click="isActiveMenu=false">
          <div class="li">
             <router-link to="/categories" v-on:click="isActiveMenu=false">Категории</router-link>
          </div>
@@ -19,6 +15,7 @@
          <div class="li">
             <router-link to="/profile" v-on:click="isActiveMenu=false">Профиль</router-link>
          </div>
+         <span>Нажмите на любое место чтобы выйти</span>
       </div>
    </div>
 </template>
@@ -35,6 +32,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+div {
+   display: flex;
+}
+
 .icon {
    flex-direction: column;
    justify-content: space-between;
@@ -70,14 +72,20 @@ a {
    display: none;
    position: fixed;
    width: 100%;
-   height: 100vh;
+   min-height: 110vh;
    top: 0;
    left: 0;
    justify-content: center;
    text-align: center;
    flex-direction: column;
-   transition: 0.3s;
-   background: rgba(0, 0, 0, 0);
+   background: rgba(0, 0, 0, 0.8);
+   padding-bottom: 50px;
+
+   > span {
+      margin-top: 50px;
+      font-size: 18px;
+      color: #f6e6ce;
+   }
 
    .icon {
       align-items: center;
@@ -103,7 +111,14 @@ a {
       align-items: center;
 
       a {
-         color: white;
+         transition: 0.3s;
+         color: #c7c7c7;
+      }
+
+      &:hover {
+         a {
+            color: white;
+         }
       }
    }
 
@@ -122,7 +137,7 @@ a {
 
 @media (max-width: 1080px) {
 
-   .burger_menu{
+   .burger_menu {
       display: flex;
    }
 }

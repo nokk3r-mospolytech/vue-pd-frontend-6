@@ -23,11 +23,15 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  .home{
-    flex-direction: column;
-    margin-top: 20px;
-  }
+<style scoped lang="scss">
+
+.home {
+   flex-direction: column;
+   margin-top: 20px;
+
+   div {
+      display: flex;
+   }
 
    .grid {
       display: grid;
@@ -68,13 +72,15 @@ export default {
    }
 }
 
-  @media (max-width: 767px) {
-    .home{
-      .card_id:nth-of-type(n){
-        grid-column-start: 1;
-        grid-column-end: 7;
+@media (max-width: 767px) {
+   .home {
+      .grid {
+         .card_id:nth-of-type(n) {
+            grid-column-start: 1;
+            grid-column-end: 7;
+         }
       }
-    }
-  }
+   }
+}
 
 </style>

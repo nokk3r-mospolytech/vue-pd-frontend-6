@@ -1,41 +1,29 @@
 <template>
    <div class="blog">
       <div class="ul">
-         <router-link to="/">
-            <div class="li profile">
-               <img :src="require('@/assets/logo.png')" alt="">
-               <span>{{ homeCardIndex(index).author }}</span>
-            </div>
+         <router-link class="li profile" to="/">
+            <img :src="require('@/assets/logo.png')" alt="">
+            <span>{{ homeCardIndex(index).author }}</span>
          </router-link>
-         <router-link to="/">
-            <div class="li time">
-               <img :src="require('@/assets/query_builder_24px.svg')" alt="">
-               <span>{{ homeCardIndex(index).dateTime }}</span>
-            </div>
+         <router-link class="li time" to="/">
+            <img :src="require('@/assets/query_builder_24px.svg')" alt="">
+            <span>{{ homeCardIndex(index).dateTime }}</span>
          </router-link>
-         <router-link to="/">
-            <div class="li comment">
-               <img :src="require('@/assets/message_24px.svg')" alt="">
-               <span>{{ homeCardIndex(index).comment }}</span>
-            </div>
+         <router-link class="li comment" to="/">
+            <img :src="require('@/assets/message_24px.svg')" alt="">
+            <span>{{ homeCardIndex(index).comment }}</span>
          </router-link>
-         <router-link to="/">
-            <div class="li like">
-               <img :src="require('@/assets/thumb_up_alt_24px.svg')" alt="">
-               <span>{{ homeCardIndex(index).like }}</span>
-            </div>
+         <router-link class="li like" to="/">
+            <img :src="require('@/assets/thumb_up_alt_24px.svg')" alt="">
+            <span>{{ homeCardIndex(index).like }}</span>
          </router-link>
-         <router-link to="/">
-            <div class="li dislike">
-               <img :src="require('@/assets/thumb_up_alt_24px-1.svg')" alt="">
-               <span>{{ homeCardIndex(index).dislike }}</span>
-            </div>
+         <router-link class="li dislike" to="/">
+            <img :src="require('@/assets/thumb_up_alt_24px-1.svg')" alt="">
+            <span>{{ homeCardIndex(index).dislike }}</span>
          </router-link>
-         <router-link to="/">
-            <div class="li visual">
-               <img :src="require('@/assets/visibility_24px.svg')" alt="">
-               <span>{{ homeCardIndex(index).views }}</span>
-            </div>
+         <router-link class="li visual" to="/">
+            <img :src="require('@/assets/visibility_24px.svg')" alt="">
+            <span>{{ homeCardIndex(index).views }}</span>
          </router-link>
 
       </div>
@@ -65,8 +53,11 @@ export default {
    flex-direction: column;
    padding: 0 40px;
    margin-top: 100px;
-   width: 1200px;
+   width: 100%;
 
+   div, span {
+      display: flex;
+   }
 
    .ul {
       align-items: center;
@@ -94,6 +85,7 @@ export default {
    }
 
    > img {
+      width: 100%;
       height: 480px;
       object-fit: cover;
       border-radius: 35px;
@@ -102,12 +94,13 @@ export default {
 
    h2 {
       text-align: left;
-      font-size: 55px;
+      font-size: 3em;
       margin-top: 50px;
    }
 
    > span {
       text-align: left;
+      font-size: 1.2em;
       margin-top: 50px;
    }
 }
@@ -116,11 +109,11 @@ export default {
    .blog {
       width: 100%;
 
-      h2{
-         font-size: 32px;
+      h2 {
+         font-size: 2.5em;
       }
 
-      >img{
+      > img {
          height: 320px;
       }
    }
@@ -128,6 +121,8 @@ export default {
 
 @media (max-width: 767px) {
    .blog {
+      margin-top: 25px;
+
       > .ul {
          flex-direction: column;
          align-items: start;
@@ -137,11 +132,12 @@ export default {
          }
       }
 
-      h2{
-         font-size: 28px;
+      h2 {
+         font-size: 2em;
       }
 
-      >img{
+      > img {
+         border-radius: 15px;
          height: 220px;
       }
    }

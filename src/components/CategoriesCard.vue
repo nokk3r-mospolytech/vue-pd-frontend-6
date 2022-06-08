@@ -45,6 +45,10 @@ export default {
    flex-direction: column;
    align-items: start;
 
+   div {
+      display: flex;
+   }
+
    > * {
       margin-top: 10px;
    }

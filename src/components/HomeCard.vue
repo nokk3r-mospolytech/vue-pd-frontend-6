@@ -30,13 +30,17 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  a{
-    flex-direction: column;
-    justify-conten\t: end;
-    height: 480px;
-    border-radius: 35px;
-    color: white;
-    min-width: 100%;
+div {
+   display: flex;
+}
+
+a {
+   flex-direction: column;
+   justify-conten\t: end;
+   height: 480px;
+   border-radius: 35px;
+   color: white;
+   min-width: 100%;
 
    > div {
       height: 100%;

@@ -48,6 +48,10 @@ header {
    width: 100%;
 }
 
+div {
+   display: flex;
+}
+
 a {
    font-size: 25px;
 }

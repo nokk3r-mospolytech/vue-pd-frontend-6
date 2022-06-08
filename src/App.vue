@@ -34,11 +34,7 @@ body {
    box-sizing: border-box;
 }
 
-div {
-   display: flex;
-}
-
-div, a, h1, h2, h3, h4, h5, header, footer, img {
+div, a, h1, h2, h3, h4, h5, header, footer, img, input {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -54,16 +50,22 @@ a {
    font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   text-align: center;
+   display: flex;
    flex-direction: column;
    align-items: center;
-   width: 1720px;
+   width: 1400px;
    color: black;
    min-height: calc(var(--vh, 1vh) * 100);
    justify-content: space-between;
 }
 
-@media (max-width: 1730px) {
+@media (min-width: 1920px) {
+   #app {
+      width: 1700px;
+   }
+}
+
+@media (max-width: 1400px) {
    #app {
       width: 100%;
    }

@@ -25,24 +25,38 @@ export default {
 
 <style scoped lang="scss">
 .login {
+   display: flex;
    flex-direction: column;
-   margin-top: 200px;
+   width: 100%;
+   padding: 0 40px;
+   align-items: center;
+
+   div {
+      display: flex;
+   }
+
+   h2 {
+      text-align: center;
+   }
 
    form {
       margin-left: 155px;
       display: flex;
       flex-direction: column;
-      width: 500px;
+      width: 600px;
       align-items: start;
 
-      > span{
-         width: 70%;
+      > span {
+         width: 65%;
          margin-top: 20px;
       }
 
-      input{
+      input {
          width: 65%;
-         padding: 5px 10px;
+         padding: 10px;
+         margin-top: 5px;
+         border: 1px solid black;
+         border-radius: 5px;
       }
 
       .password {

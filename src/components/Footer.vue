@@ -8,5 +8,9 @@
 footer {
    margin-top: 60px;
    margin-bottom: 20px;
+
+   h3 {
+      text-align: center;
+   }
 }
 </style>

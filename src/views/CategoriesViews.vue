@@ -43,6 +43,10 @@ export default {
    align-items: start;
    margin-top: 50px;
 
+   div {
+      display: flex;
+   }
+
    .card_empty {
       flex-direction: column;
       align-items: start;
@@ -78,7 +82,7 @@ export default {
 
    > h2 {
       margin-top: 95px;
-      font-size: 48px;
+      font-size: 3em;
    }
 
    .ul {
@@ -86,18 +90,14 @@ export default {
       margin-top: 50px;
 
       > * {
+         margin-top: 20px;
          margin-right: 20px;
       }
    }
-}
 
-@media (max-width: 1720px) {
-   .categories{
-      .ul{
-         >*:nth-of-type(n+5){
-            display: none;
-         }
-      }
+   > .ul {
+
+      flex-wrap: wrap;
    }
 }
 
@@ -119,7 +119,7 @@ export default {
       .ul {
          justify-content: center;
 
-         .card_id:not(:first-of-type){
+         .card_id, .card_empty {
             margin-top: 40px;
          }
       }

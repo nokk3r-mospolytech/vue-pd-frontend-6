@@ -49,6 +49,10 @@ export default {
    align-items: baseline;
    padding: 0 40px;
 
+   div {
+      display: flex;
+   }
+
    .ul_profile {
       width: 100%;
 
@@ -65,8 +69,9 @@ export default {
 
          span {
             margin-top: 5px;
-            font-size: 20px;
+            font-size: 1.3em;
             font-weight: 500;
+            text-align: center;
             cursor: pointer;
          }
       }
@@ -81,12 +86,12 @@ export default {
             align-items: start;
 
             h3 {
-               font-size: 55px;
+               font-size: 3em;
                font-weight: 500;
             }
 
             span {
-               font-size: 25px;
+               font-size: 1.5em;
                font-weight: 500;
             }
          }
@@ -94,6 +99,10 @@ export default {
 
       .btn {
          padding: 10px;
+
+         span {
+            text-align: center;
+         }
       }
    }
 
@@ -157,6 +166,7 @@ export default {
             }
          }
       }
+
       .subscribe {
          flex-wrap: wrap;
       }
@@ -165,11 +175,20 @@ export default {
 
 @media (max-width: 768px) {
    .profile {
-      .ul_profile{
-         .img{
-            img{
+      > h2 {
+         text-align: center;
+         font-size: 2.5em;
+      }
+
+      .ul_profile {
+         .img {
+            img {
                width: 150px;
                height: 150px;
+            }
+
+            span {
+               font-size: 1em;
             }
          }
 
@@ -192,6 +211,11 @@ export default {
             }
          }
       }
+
+      .card_id, .card_empty {
+         margin-top: 40px;
+      }
+
       .subscribe {
          justify-content: center;
       }
