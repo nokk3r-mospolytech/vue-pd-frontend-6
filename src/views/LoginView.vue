@@ -44,29 +44,19 @@ export default {
    }
 
    form {
-      margin-left: 155px;
-      display: flex;
-      flex-direction: column;
       width: 600px;
-      align-items: start;
+      margin-left: 155px;
 
       > span {
          width: 65%;
-         margin-top: 20px;
       }
 
-      input {
+      > input {
          width: 65%;
-         padding: 10px;
-         margin-top: 5px;
-         border: 1px solid black;
-         border-radius: 5px;
       }
 
       .password {
          width: 100%;
-         justify-content: space-between;
-         align-items: center;
 
          input {
             width: 65%;
@@ -74,8 +64,6 @@ export default {
       }
 
       .ul_buttons {
-         justify-content: space-between;
-         align-items: center;
          width: 65%;
          margin-top: 30px;
 
@@ -85,15 +73,6 @@ export default {
 
          .buttons {
             width: 47%;
-            padding: 5px;
-            border: 1px solid black;
-            border-radius: 5px;
-            justify-content: center;
-         }
-
-         .buttons_submit {
-            background: black;
-            color: white;
          }
       }
    }

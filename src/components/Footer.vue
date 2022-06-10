@@ -1,6 +1,5 @@
 <template>
    <footer>
-      <h3>Пример футера</h3>
    </footer>
 </template>
 

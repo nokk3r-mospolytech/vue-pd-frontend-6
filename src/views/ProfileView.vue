@@ -10,9 +10,9 @@
                <h3>Анна Светова</h3>
                <span>svetova@yandex.ru</span>
             </div>
-            <div class="btn">
+            <router-link to="/setting" class="btn">
                <span>изменить профиль</span>
-            </div>
+            </router-link>
          </div>
       </div>
       <h2>Вы подписаны</h2>
@@ -148,7 +148,7 @@ export default {
       margin-top: 50px;
 
       > * {
-         margin-right: 20px;
+         margin: 15px;
       }
    }
 

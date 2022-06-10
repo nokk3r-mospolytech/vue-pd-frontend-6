@@ -3,7 +3,7 @@
       <h2>Вход</h2>
       <form action="#">
          <span>Логин</span>
-         <input class="login" type="text">
+         <input class="log" type="text">
          <span>Пароль</span>
          <input class="pass pass-1" type="password">
          <span>Пароль еще раз</span>
@@ -43,39 +43,26 @@ export default {
    }
 
    form {
-      margin-left: 155px;
-      display: flex;
-      flex-direction: column;
       width: 600px;
-      align-items: start;
 
       > span {
-         width: 65%;
-         margin-top: 20px;
+         width: 100%;
       }
 
       > input {
-         width: 65%;
-         padding: 10px;
-         margin-top: 5px;
-         border: 1px solid black;
-         border-radius: 5px;
+         width: 100%;
       }
 
       .password {
          width: 100%;
-         justify-content: space-between;
-         align-items: center;
 
          input {
-            width: 65%;
+            width: 100%;
          }
       }
 
       .ul_buttons {
-         justify-content: space-between;
-         align-items: center;
-         width: 65%;
+         width: 100%;
          margin-top: 30px;
 
          input {
@@ -84,15 +71,6 @@ export default {
 
          .buttons {
             width: 47%;
-            padding: 5px;
-            border: 1px solid black;
-            border-radius: 5px;
-            justify-content: center;
-         }
-
-         .buttons_submit {
-            background: black;
-            color: white;
          }
       }
    }

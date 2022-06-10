@@ -72,15 +72,49 @@ a {
    }
 }
 
-@media (min-width: 1920px) {
-   #app {
-      width: 1700px;
-   }
-}
-
 @media (max-width: 1400px) {
    #app {
       width: 100%;
+   }
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+
+   > span {
+      margin-top: 20px;
+   }
+
+   input {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid black;
+      border-radius: 5px;
+   }
+
+   .password {
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .ul_buttons {
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+
+      .buttons {
+         padding: 5px;
+         border: 1px solid black;
+         border-radius: 5px;
+         justify-content: center;
+      }
+
+      .buttons_submit {
+         background: black;
+         color: white;
+      }
    }
 }
 
