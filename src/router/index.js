@@ -4,6 +4,7 @@ import BlogView from '@/views/BlogView.vue'
 import CategoriesViews from "@/views/CategoriesViews";
 import ProfileView from "@/views/ProfileView";
 import MarkdownView from "@/views/MarkdownView";
+import SettingView from "@/views/SettingView";
 
 
 const routes = [
@@ -31,6 +32,11 @@ const routes = [
         path: '/markdown',
         name: 'markdown',
         component: MarkdownView
+    },
+    {
+        path: '/setting',
+        name: 'setting',
+        component: SettingView
     },
     {
         path: '/profile',
