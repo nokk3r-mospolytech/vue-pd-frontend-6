@@ -8,11 +8,21 @@
 
 import Header from "@/components/Header.vue"
 import Footer from "@/components/Footer.vue"
+import {mapActions} from "vuex";
 
 export default {
    components: {
       Header,
       Footer
+   },
+   methods: mapActions(['checkValidToken']),
+
+   async mounted(){
+      const res = await this.checkValidToken()
+      if (res){
+         console.log(res)
+      }
+      console.log(localStorage.getItem('token'))
    }
 }
 
@@ -44,6 +54,13 @@ a {
    display: flex;
    text-decoration: none;
    color: black;
+}
+
+input{
+   font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 #app {

@@ -21,8 +21,15 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
-   name: "LoginView.vue"
+   methods: {
+      ...mapActions(['register'])
+   },
+   async mounted(){
+      await this.register()
+   }
 }
 </script>
 

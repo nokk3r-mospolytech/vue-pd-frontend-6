@@ -2,13 +2,17 @@
    <div class="profile">
       <div class="ul ul_profile">
          <div class="img">
-            <img :src="require('@/assets/categoriesCard/Rectangle 1.png')" alt="logo">
-            <span>изменить фото</span>
+            <form action="">
+               <img :src="require('@/assets/categoriesCard/Rectangle 1.png')" alt="logo">
+               <label for="img">выбирите файл</label>
+               <input id="img" v-on:change="onFileChange" type="file" alt="23">
+               <span>{{ form.img }}</span>
+            </form>
          </div>
          <div class="profile_name">
             <div class="contact">
-               <h3>Анна Светова</h3>
-               <span>svetova@yandex.ru</span>
+               <h3>{{ getProfile.first_name }} {{ getProfile.last_name }}</h3>
+               <span>{{ getProfile.email }}</span>
             </div>
             <router-link to="/setting" class="btn">
                <span>изменить профиль</span>
@@ -33,11 +37,34 @@
 
 <script>
 import CategoriesCard from "@/components/CategoriesCard";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
    name: "ProfileView.vue",
+   computed: mapGetters(['getProfile']),
+   methods: {
+      ...mapActions(['fetchProfile', 'putAvatar']),
+      async onFileChange(e) {
+         const files = e.target.files || e.dataTransfer.files;
+         if (!files.length)
+            return;
+         console.log(files[0])
+         await this.putAvatar(files[0])
+      },
+   },
+   data() {
+      return {
+         form: {
+            img: null
+         }
+      }
+   },
    components: {
       CategoriesCard
+   },
+   async mounted() {
+      // POST request using fetch with async/await
+      await this.fetchProfile()
    }
 }
 </script>
@@ -60,6 +87,17 @@ export default {
          flex-direction: column;
          margin-right: 20px;
 
+         form {
+            display: flex;
+            align-items: center;
+
+            input {
+               display: none;
+               border: none;
+               border-radius: 0;
+            }
+         }
+
          img {
             width: 270px;
             height: 270px;
@@ -67,12 +105,16 @@ export default {
             border-radius: 30px;
          }
 
-         span {
+         label {
             margin-top: 5px;
             font-size: 1.3em;
             font-weight: 500;
             text-align: center;
             cursor: pointer;
+         }
+
+         span{
+            text-align: center;
          }
       }
 

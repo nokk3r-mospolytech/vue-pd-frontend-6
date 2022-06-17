@@ -1,24 +1,28 @@
 <template>
    <div class="home">
       <div class="grid">
-         <HomeCard v-for="card in allHomeCards" :key="card.id" v-bind:index="card.id"/>
-         <HomeCard v-for="card in allHomeCards" :key="card.id" v-bind:index="card.id"/>
-         <HomeCard v-for="card in allHomeCards" :key="card.id" v-bind:index="card.id"/>
-         <HomeCard v-for="card in allHomeCards" :key="card.id" v-bind:index="card.id"/>
+         <HomeCard v-for="card in allHomeCardsPreview.length" :key="card-1" v-bind:index="card-1"/>
+         <HomeCard v-for="card in allHomeCardsPreview.length" :key="card-1" v-bind:index="card-1"/>
+         <HomeCard v-for="card in allHomeCardsPreview.length" :key="card-1" v-bind:index="card-1"/>
+         <HomeCard v-for="card in allHomeCardsPreview.length" :key="card-1" v-bind:index="card-1"/>
       </div>
    </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 import HomeCard from "@/components/HomeCard";
 
 export default {
    name: 'HomeView',
-   computed: mapGetters(['allHomeCards']),
+   computed: mapGetters(['allHomeCardsPreview']),
+   methods: mapActions(['fetchHomeCardPreview']),
    components: {
       HomeCard
+   },
+   async mounted() {
+      await this.fetchHomeCardPreview()
    }
 }
 </script>
@@ -28,6 +32,7 @@ export default {
 .home {
    flex-direction: column;
    margin-top: 20px;
+   width: 100%;
 
    div {
       display: flex;

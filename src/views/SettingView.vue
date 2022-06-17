@@ -6,14 +6,14 @@
       </div>
       <form action="#">
          <span>Логин</span>
-         <input type="text">
+         <input v-model="form.login" type="text">
          <span>Пароль</span>
          <div class="ul password">
-            <input type="password">
+            <input v-model="form.pass1" type="password">
          </div>
          <span>Повторите пароль</span>
          <div class="ul password">
-            <input type="password">
+            <input v-model="form.pass2" type="password">
             <span>Забыли пароль?</span>
          </div>
          <div class="ul ul_buttons">
@@ -29,8 +29,20 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
-   name: "SettingView"
+   name: "SettingView",
+   computed: mapGetters(['getProfile']),
+   data(){
+      return{
+         form:{
+            login: '',
+            pass1: '',
+            pass2: ''
+         }
+      }
+   }
 }
 </script>
 

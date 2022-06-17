@@ -5,6 +5,7 @@ import CategoriesViews from "@/views/CategoriesViews";
 import ProfileView from "@/views/ProfileView";
 import MarkdownView from "@/views/MarkdownView";
 import SettingView from "@/views/SettingView";
+import store from "@/store";
 
 
 const routes = [
@@ -41,7 +42,10 @@ const routes = [
     {
         path: '/profile',
         name: 'profile',
-        component: ProfileView
+        component: ProfileView,
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         path: '/blog/:id',
@@ -63,6 +67,18 @@ const router = createRouter({
             return {top: 0}
         }
     },
+})
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+        if (store.getters.getAuth) {
+            next()
+            return
+        }
+        next('/login')
+    } else {
+        next()
+    }
 })
 
 export default router

@@ -1,11 +1,11 @@
 <template>
-   <router-link class="card_id" :to="setURL(index)">
-      <div :style="{'background-image': imageURL(index)}">
+   <router-link class="card_id" :to="setURL(allHomeCardsPreview[index].slug)">
+      <div :style="{'background-image': imageURL(allHomeCardsPreview[index].poster_link)}">
          <div class="ul">
             <span>Новости</span>
-            <span>{{ allHomeCards[index].dateTime }}</span>
+            <span>{{ allHomeCardsPreview[index].updated_at }}</span>
          </div>
-         <h2>{{ allHomeCards[index].title }}</h2>
+         <h2>{{ allHomeCardsPreview[index].title }}</h2>
       </div>
    </router-link>
 </template>
@@ -14,14 +14,15 @@ import {mapGetters} from 'vuex'
 
 export default {
    computed: {
-      ...mapGetters(['allHomeCards']),
+      ...mapGetters(['allHomeCardsPreview']),
    },
    props: {
       index: Number
    },
    methods: {
       imageURL(index) {
-         return 'url(' + require('@/assets/img/Rectangle' + (index + 1) + '.jpg') + ')'
+         // return 'url(' + require('@/assets/img/Rectangle' + (index + 1) + '.jpg') + ')'
+         return 'url(' + index + ')'
       },
       setURL(index) {
          return "/blog/" + index

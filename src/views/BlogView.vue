@@ -3,47 +3,51 @@
       <div class="ul">
          <router-link class="li profile" to="/">
             <img :src="require('@/assets/logo.png')" alt="">
-            <span>{{ homeCardIndex(index).author }}</span>
+            <span>{{ allHomeCard.author }}</span>
          </router-link>
          <router-link class="li time" to="/">
             <img :src="require('@/assets/query_builder_24px.svg')" alt="">
-            <span>{{ homeCardIndex(index).dateTime }}</span>
+            <span>{{ allHomeCard.updated_at }}</span>
          </router-link>
          <router-link class="li comment" to="/">
             <img :src="require('@/assets/message_24px.svg')" alt="">
-            <span>{{ homeCardIndex(index).comment }}</span>
+            <span>{{ allHomeCard.views }}</span>
          </router-link>
          <router-link class="li like" to="/">
             <img :src="require('@/assets/thumb_up_alt_24px.svg')" alt="">
-            <span>{{ homeCardIndex(index).like }}</span>
+            <span>{{ allHomeCard.likes }}</span>
          </router-link>
          <router-link class="li dislike" to="/">
             <img :src="require('@/assets/thumb_up_alt_24px-1.svg')" alt="">
-            <span>{{ homeCardIndex(index).dislike }}</span>
+            <span>{{ allHomeCard.dislikes }}</span>
          </router-link>
          <router-link class="li visual" to="/">
             <img :src="require('@/assets/visibility_24px.svg')" alt="">
-            <span>{{ homeCardIndex(index).views }}</span>
+            <span>{{ allHomeCard.views }}</span>
          </router-link>
-
       </div>
-      <h2>{{ homeCardIndex(index).title }}</h2>
-      <img :src="require('@/assets/img/Rectangle' + (Number(index) + 1) + '.jpg')" alt="">
-      <span>{{ homeCardIndex(index).desc }}</span>
+      <h2>{{ allHomeCard.title }}</h2>
+      <img :src=allHomeCard.poster_link alt="">
+      <span>{{ allHomeCard.content }}</span>
    </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
    computed: {
-      ...mapGetters(['allHomeCards', 'homeCardIndex']),
+      ...mapGetters(['allHomeCard']),
    },
-   data() {
-      return {
-         index: this.$route.params.id,
-      }
+   methods: {
+      ...mapActions(['fetchHomeCard']),
+      imageURL(index) {
+         // return 'url(' + require('@/assets/img/Rectangle' + (index + 1) + '.jpg') + ')'
+         return 'url(' + index + ')'
+      },
+   },
+   async mounted() {
+      await this.fetchHomeCard(this.$route.params.id)
    }
 }
 </script>

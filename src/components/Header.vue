@@ -21,7 +21,8 @@
          <BurgerMenu/>
          <div class="login">
             <!--         <input type="text" placeholder="Найти...">-->
-            <router-link to="/login">Вход</router-link>
+            <a v-on:click=logoutNow v-if="getAuth">Выход</a>
+            <router-link v-else to="/login">Вход</router-link>
          </div>
       </div>
    </header>
@@ -29,8 +30,17 @@
 
 <script>
 import BurgerMenu from "@/components/Header/BurgerMenu";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
+   computed: mapGetters(['getAuth']),
+   methods: {
+      ...mapActions(['logout']),
+      logoutNow(){
+         console.log('logout success')
+         this.logout()
+      }
+   },
    components: {
       BurgerMenu
    }

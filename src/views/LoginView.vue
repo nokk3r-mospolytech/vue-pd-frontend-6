@@ -1,18 +1,20 @@
 <template>
    <div class="login">
       <h2>Вход</h2>
-      <form action="#">
-         <span>Логин</span>
-         <input type="text">
+      <form @submit.prevent="submit">
+         <span>Email</span>
+         <input v-model="form.login" type="email" required>
          <span>Пароль</span>
          <div class="ul password">
-            <input type="password">
+            <input v-model="form.pass" type="password" required>
             <span>Забыли пароль?</span>
          </div>
+         <span> {{ errors }}</span>
          <div class="ul ul_buttons">
-            <router-link class="buttons buttons_submit" to="/">
-               <span>Войти</span>
-            </router-link>
+            <input class="buttons buttons_submit" type="submit">
+<!--            <div v-on:click="submit" class="buttons buttons_submit">-->
+<!--               <span>Войти</span>-->
+<!--            </div>-->
             <router-link class="buttons" to="/register">
                <span>Регистрация</span>
             </router-link>
@@ -22,8 +24,32 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
-   name: "LoginView.vue"
+   name: "LoginView.vue",
+   data() {
+      return {
+         form: {
+            login: '',
+            pass: '',
+         },
+         errors: ''
+      }
+   },
+   methods: {
+      ...mapActions(['login']),
+      async submit() {
+         const response = await this.login(this.form)
+         if (response){
+            this.errors = response
+            this.form.pass = ''
+            return
+         }
+         await this.$router.push('/')
+      },
+
+   }
 }
 </script>
 
@@ -68,6 +94,8 @@ export default {
          margin-top: 30px;
 
          input {
+            margin: 0;
+            font-size: 16px;
             width: 47%;
          }
 
