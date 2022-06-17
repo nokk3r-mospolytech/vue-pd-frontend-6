@@ -1,4 +1,4 @@
-# skprods-client
+# ReteBlog_client
 
 ## Project setup
 ```
